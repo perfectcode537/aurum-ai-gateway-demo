@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurum - AI Cost Gateway</title>
+<meta name="description" content="Aurum is a demo concept for an AI cost optimisation gateway built on LiteLLM: cut AI spend, keep personal data away from providers, and prove every penny saved.">
+<meta name="theme-color" content="#0b0a08">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23d4b46a' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23d4b46a'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- preloader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__mark"><span class="ring"></span>AURUM</div>
+    <div class="loader__count"><span id="loadNum">0</span>%</div>
+  </div>
+  <div class="loader__bar"><i></i></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><i></i></div>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <a href="#top" class="logo" aria-label="Aurum home"><span class="ring"></span>Aurum</a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#platform">Platform</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#features">Features</a>
+    <a href="#savings">Savings</a>
+    <a href="#roadmap">Roadmap</a>
+  </nav>
+  <a href="#pilot" class="btn btn--gold btn--sm nav__cta" data-magnetic><span>Join the pilot</span></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav>
+    <a href="#platform">Platform</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#features">Features</a>
+    <a href="#savings">Savings</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#pilot">Join the pilot</a>
+  </nav>
+  <p class="menu__foot">AI cost gateway - built on LiteLLM - hosted in AWS London</p>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__media" id="heroMedia">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/poster-14154.jpg">
+      <source src="assets/video/14154.mp4" type="video/mp4">
+    </video>
+    <div class="hero__shade"></div>
+  </div>
+  <div class="hero__content wrap">
+    <p class="eyebrow reveal-up">AI cost gateway &nbsp;/&nbsp; Built on LiteLLM &nbsp;/&nbsp; AWS London</p>
+    <h1 class="hero__title">
+      <span class="line"><span>Spend less on AI.</span></span>
+      <span class="line"><span><em>Prove</em> every penny.</span></span>
+    </h1>
+    <p class="hero__lead reveal-up">One quiet layer between your apps and OpenAI, Anthropic and Google. It strips personal data before it leaves, answers repeats from cache, and keeps a ledger your finance team can trust.</p>
+    <div class="hero__ctas reveal-up">
+      <a href="#pilot" class="btn btn--gold" data-magnetic><span>Join the pilot</span></a>
+      <a href="#platform" class="btn btn--ghost" data-magnetic><span>See how it works</span><b class="arrow">&darr;</b></a>
+    </div>
+  </div>
+  <div class="hero__stats wrap">
+    <div class="chip reveal-up"><strong>&lt; 50 ms</strong><span>added on cache hits</span></div>
+    <div class="chip reveal-up"><strong>95%+</strong><span>personal data removed</span></div>
+    <div class="chip reveal-up"><strong>0</strong><span>prompt text stored</span></div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- MARQUEE -->
+<section class="marquee" aria-label="Works with">
+  <div class="marquee__track" id="marquee">
+    <div class="marquee__row">
+      <span>OpenAI</span><i>&#10022;</i><span>Anthropic</span><i>&#10022;</i><span>Google</span><i>&#10022;</i><span>LiteLLM</span><i>&#10022;</i><span>Presidio</span><i>&#10022;</i><span>AWS London</span><i>&#10022;</i><span>PostgreSQL</span><i>&#10022;</i><span>Redis</span><i>&#10022;</i>
+    </div>
+    <div class="marquee__row" aria-hidden="true">
+      <span>OpenAI</span><i>&#10022;</i><span>Anthropic</span><i>&#10022;</i><span>Google</span><i>&#10022;</i><span>LiteLLM</span><i>&#10022;</i><span>Presidio</span><i>&#10022;</i><span>AWS London</span><i>&#10022;</i><span>PostgreSQL</span><i>&#10022;</i><span>Redis</span><i>&#10022;</i>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto wrap" id="about">
+  <div class="manifesto__text">
+    <p class="kicker reveal-up">01 &nbsp;&mdash;&nbsp; The idea</p>
+    <p class="manifesto__big" id="manifesto">Every AI request your company makes passes through one calm, careful layer. It removes personal data before anything leaves, answers repeated questions from cache, routes the rest to the right model, and writes down exactly what you saved.</p>
+  </div>
+  <div class="manifesto__media">
+    <figure class="frame frame--tall parallax" data-speed="-0.12">
+      <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1100&q=75&auto=format&fit=crop" alt="Aerial view of London and the Thames at dusk" loading="lazy">
+      <figcaption>Hosted in AWS London, across two zones</figcaption>
+    </figure>
+    <figure class="frame frame--small parallax" data-speed="0.18">
+      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=75&auto=format&fit=crop" alt="Server rack with neatly bundled cables" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers wrap" aria-label="Pilot targets">
+  <div class="num reveal-up"><span class="num__val"><small>&lt;</small><b data-count="50">0</b><small>ms</small></span><p>Added latency on a cache hit</p></div>
+  <div class="num reveal-up"><span class="num__val"><b data-count="95">0</b><small>%+</small></span><p>Personal data removed before the provider</p></div>
+  <div class="num reveal-up"><span class="num__val"><b data-count="2">0</b><small>AZs</small></span><p>Availability zones in London</p></div>
+  <div class="num reveal-up"><span class="num__val"><b data-count="5">0</b><small>steps</small></span><p>Milestones from foundation to pilot</p></div>
+</section>
+
+<!-- PLATFORM: pinned horizontal journey with 3D -->
+<section class="platform" id="platform">
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="platform__head wrap">
+    <p class="kicker reveal-up">02 &nbsp;&mdash;&nbsp; How it works</p>
+    <h2 class="h2 split">The life of a request, <em>in seven quiet steps.</em></h2>
+  </div>
+  <div class="platform__pin" id="pin">
+    <div class="track" id="track">
+      <article class="step">
+        <span class="step__n">01</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900&q=70&auto=format&fit=crop" alt="Glowing circuit lines" loading="lazy"></div>
+        <h3>Authenticate</h3>
+        <p>A virtual key tells the gateway which client organisation is calling. Unknown or revoked keys never get further.</p>
+      </article>
+      <article class="step">
+        <span class="step__n">02</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&q=70&auto=format&fit=crop" alt="Coins with a young plant growing" loading="lazy"></div>
+        <h3>Check the budget</h3>
+        <p>Per-client caps and spike detection run before a single token is spent. Runaway agents are stopped, not discovered.</p>
+      </article>
+      <article class="step step--gold">
+        <span class="step__n">03</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=70&auto=format&fit=crop" alt="Blackboard covered in mathematics" loading="lazy"></div>
+        <h3>Mask personal data</h3>
+        <p>Presidio with UK detectors swaps names, NHS and NI numbers and postcodes for typed placeholders.</p>
+      </article>
+      <article class="step">
+        <span class="step__n">04</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=70&auto=format&fit=crop" alt="Close-up of a circuit board" loading="lazy"></div>
+        <h3>Look in the cache</h3>
+        <p>Exact match by default, semantic match when a client opts in. Every entry is masked and isolated per client.</p>
+      </article>
+      <article class="step">
+        <span class="step__n">05</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=70&auto=format&fit=crop" alt="Earth at night with city lights" loading="lazy"></div>
+        <h3>Route wisely</h3>
+        <p>The requested model first, then retries and backup models. Requests that can wait go to batch APIs at a lower price.</p>
+      </article>
+      <article class="step step--gold">
+        <span class="step__n">06</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&q=70&auto=format&fit=crop" alt="Streams of green code" loading="lazy"></div>
+        <h3>Restore</h3>
+        <p>Real values return to the answer, in streamed chunks and inside tool calls, with JSON kept perfectly valid.</p>
+      </article>
+      <article class="step">
+        <span class="step__n">07</span>
+        <div class="step__img"><img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=900&q=70&auto=format&fit=crop" alt="Library with marble busts" loading="lazy"></div>
+        <h3>Write the ledger</h3>
+        <p>Cost, savings and metadata are recorded. The prompt text never is. Every figure can be traced and reconciled.</p>
+      </article>
+    </div>
+  </div>
+  <div class="progress wrap" aria-hidden="true"><i id="progressBar"></i></div>
+</section>
+
+<!-- PRIVACY -->
+<section class="privacy wrap" id="privacy">
+  <div class="privacy__copy">
+    <p class="kicker reveal-up">03 &nbsp;&mdash;&nbsp; Privacy first</p>
+    <h2 class="h2 split">Personal data <em>never leaves</em> your side.</h2>
+    <p class="lead reveal-up">Masking runs inside the gateway, before the cache and before any provider. Logs hold metadata only. If the privacy layer ever fails, the request is refused, even for fail-open clients.</p>
+    <ul class="ticks reveal-up">
+      <li>NHS numbers checked with Modulus 11</li>
+      <li>NI numbers and UK postcodes detected</li>
+      <li>Fake-PII leak test across cache, database and logs</li>
+      <li>Metadata-only audit log, never prompt text</li>
+    </ul>
+
+    <div class="nhs reveal-up">
+      <label for="nhsIn">Try the NHS number check</label>
+      <div class="nhs__row">
+        <input id="nhsIn" inputmode="numeric" autocomplete="off" maxlength="12" value="943 476 5919" aria-describedby="nhsOut">
+        <span class="nhs__badge" id="nhsBadge">Valid</span>
+      </div>
+      <p class="nhs__out mono" id="nhsOut"></p>
+    </div>
+  </div>
+
+  <div class="console reveal-up" aria-label="Masking demo">
+    <video class="console__bg" muted loop playsinline preload="none" data-lazy poster="assets/img/poster-47051.jpg">
+      <source data-src="assets/video/47051.mp4" type="video/mp4">
+    </video>
+    <div class="console__glass">
+      <div class="console__bar"><i></i><i></i><i></i><span>gateway / live masking</span></div>
+      <div class="console__block">
+        <p class="console__label">Your app sends</p>
+        <p class="mono console__text" id="cIn"></p>
+      </div>
+      <div class="console__block">
+        <p class="console__label gold">Provider sees</p>
+        <p class="mono console__text" id="cMid"></p>
+      </div>
+      <div class="console__block">
+        <p class="console__label">Your app receives</p>
+        <p class="mono console__text" id="cOut"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES bento -->
+<section class="features wrap" id="features">
+  <div class="sect-head">
+    <p class="kicker reveal-up">04 &nbsp;&mdash;&nbsp; What sets it apart</p>
+    <h2 class="h2 split">Six features. <em>One clear bill.</em></h2>
+  </div>
+  <div class="bento">
+    <article class="card card--wide" data-tilt>
+      <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1400&q=70&auto=format&fit=crop" alt="Network cables in a patch panel" loading="lazy">
+      <div class="card__body"><span class="tag">Caching</span><h3>Exact and semantic cache</h3><p>Stored masked, isolated per client. Prompts with NHS or NI numbers use exact match only.</p></div>
+    </article>
+    <article class="card" data-tilt>
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=70&auto=format&fit=crop" alt="Finance papers and a calculator" loading="lazy">
+      <div class="card__body"><span class="tag">Ledger</span><h3>Savings ledger</h3><p>Versioned price table, list-price baseline, provider discounts excluded.</p></div>
+    </article>
+    <article class="card" data-tilt>
+      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=900&q=70&auto=format&fit=crop" alt="Nebula in deep space" loading="lazy">
+      <div class="card__body"><span class="tag">Batch</span><h3>Batch Autopilot</h3><p>Requests that can wait go to provider batch APIs, saving is recorded automatically.</p></div>
+    </article>
+    <article class="card" data-tilt>
+      <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=900&q=70&auto=format&fit=crop" alt="Laptop glowing in the dark" loading="lazy">
+      <div class="card__body"><span class="tag">Insight</span><h3>Cache Doctor</h3><p>Finds the timestamps, IDs and reordering that quietly break your cache.</p></div>
+    </article>
+    <article class="card" data-tilt>
+      <img src="https://images.unsplash.com/photo-1496096265110-f83ad7f96608?w=900&q=70&auto=format&fit=crop" alt="Streaks of light at speed" loading="lazy">
+      <div class="card__body"><span class="tag">Guard</span><h3>Runaway Agent Guard</h3><p>Spend caps and spike alerts per client and per key, with an optional hard stop.</p></div>
+    </article>
+    <article class="card card--wide" data-tilt>
+      <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1400&q=70&auto=format&fit=crop" alt="Padlock on a keyboard" loading="lazy">
+      <div class="card__body"><span class="tag">Resilience</span><h3>Fail-closed by default</h3><p>Each client chooses fail-open or fail-closed. Either way, masking is never skipped.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- FILM: infrastructure -->
+<section class="film" id="infra">
+  <div class="film__frame" id="filmFrame">
+    <video muted loop playsinline preload="none" data-lazy poster="assets/img/poster-23282.jpg">
+      <source data-src="assets/video/23282.mp4" type="video/mp4">
+    </video>
+    <div class="film__shade"></div>
+    <div class="film__copy wrap">
+      <p class="kicker">05 &nbsp;&mdash;&nbsp; Built for uptime</p>
+      <h2 class="film__title split">Two zones in London.<br><em>No single point of failure.</em></h2>
+    </div>
+  </div>
+  <div class="failmode wrap">
+    <div class="failmode__intro reveal-up">
+      <h3>What happens when Redis goes down?</h3>
+      <p>Pick a setting and see how a client's requests behave.</p>
+      <div class="switch" role="tablist" aria-label="Failure mode">
+        <button role="tab" aria-selected="true" class="is-on" data-mode="closed">Fail-closed</button>
+        <button role="tab" aria-selected="false" data-mode="open">Fail-open</button>
+        <i class="switch__pill"></i>
+      </div>
+    </div>
+    <ul class="failmode__list reveal-up" id="failList"></ul>
+  </div>
+</section>
+
+<!-- SAVINGS dashboard -->
+<section class="savings wrap" id="savings">
+  <div class="sect-head">
+    <p class="kicker reveal-up">06 &nbsp;&mdash;&nbsp; Proof, not promises</p>
+    <h2 class="h2 split">A statement your <em>finance team</em> will sign.</h2>
+  </div>
+  <div class="dash reveal-up">
+    <div class="dash__top">
+      <div><span class="dot"></span>Meridale Health Ltd &nbsp;<small>October 2026</small></div>
+      <small class="muted">Illustrative demo data</small>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><small>Baseline cost</small><b>&pound;<span data-count="48200" data-sep>0</span></b></div>
+      <div class="kpi"><small>Actual cost</small><b>&pound;<span data-count="29640" data-sep>0</span></b></div>
+      <div class="kpi kpi--gold"><small>Saved</small><b>&pound;<span data-count="18560" data-sep>0</span></b><em>38.5%</em></div>
+      <div class="kpi"><small>Cache hit rate</small><b><span data-count="31">0</span>%</b></div>
+    </div>
+    <div class="dash__body">
+      <div class="chart">
+        <div class="chart__legend"><span><i class="l-base"></i>Baseline</span><span><i class="l-act"></i>Actual</span></div>
+        <svg viewBox="0 0 600 240" preserveAspectRatio="none" id="chart" aria-label="Baseline versus actual spend over 30 days">
+          <defs>
+            <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4b46a" stop-opacity=".35"/><stop offset="1" stop-color="#d4b46a" stop-opacity="0"/></linearGradient>
+          </defs>
+          <g class="grid"><line x1="0" y1="60" x2="600" y2="60"/><line x1="0" y1="120" x2="600" y2="120"/><line x1="0" y1="180" x2="600" y2="180"/></g>
+          <path id="pBase" class="p-base" d=""/>
+          <path id="pArea" class="p-area" d=""/>
+          <path id="pAct" class="p-act" d=""/>
+        </svg>
+      </div>
+      <div class="split-bars">
+        <p class="muted small">Savings by source</p>
+        <div class="bar"><span>Cache</span><div><i style="--w:54%"></i></div><b>54%</b></div>
+        <div class="bar"><span>Routing</span><div><i style="--w:29%"></i></div><b>29%</b></div>
+        <div class="bar"><span>Batch</span><div><i style="--w:17%"></i></div><b>17%</b></div>
+        <p class="muted small note">Baseline is the list price of the model the client asked for. Provider caching discounts are excluded.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="people">
+    <article class="person reveal-up">
+      <div class="person__img"><img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=900&q=70&auto=format&fit=crop" alt="Laptop showing code" loading="lazy"></div>
+      <h3>For engineers</h3><p>Latency, cache hits, errors and degraded requests by client, model and key.</p>
+    </article>
+    <article class="person reveal-up">
+      <div class="person__img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=70&auto=format&fit=crop" alt="Analytics dashboard on a laptop" loading="lazy"></div>
+      <h3>For finance</h3><p>A monthly savings statement that reconciles with the ledger, line by line.</p>
+    </article>
+    <article class="person reveal-up">
+      <div class="person__img"><img src="https://images.unsplash.com/photo-1520986606214-8b456906c813?w=900&q=70&auto=format&fit=crop" alt="Big Ben and a red London bus" loading="lazy"></div>
+      <h3>For compliance</h3><p>UK data stays in AWS London. Audit log with metadata only, permissive licences only.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap" id="roadmap">
+  <div class="roadmap__bg parallax" data-speed="-0.08">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=70&auto=format&fit=crop" alt="" loading="lazy">
+  </div>
+  <div class="wrap roadmap__inner">
+    <div class="sect-head">
+      <p class="kicker reveal-up">07 &nbsp;&mdash;&nbsp; Road to pilot</p>
+      <h2 class="h2 split">Five milestones. <em>Pilot-ready by December.</em></h2>
+    </div>
+    <ol class="timeline" id="timeline">
+      <li><time>26 Oct</time><h3>Foundation</h3><p>Multi-tenant keys, three providers with streaming, budgets and spend tracking.</p></li>
+      <li><time>5 Nov</time><h3>Privacy and reliability</h3><p>PII masking with UK detectors, isolation tests, retries and backup models.</p></li>
+      <li><time>17 Nov</time><h3>Caching and ledger</h3><p>Exact and semantic cache, versioned prices, shadow baseline, savings ledger.</p></li>
+      <li><time>26 Nov</time><h3>Differentiators</h3><p>Batch Autopilot, Cache Doctor, Runaway Agent Guard, dashboards.</p></li>
+      <li><time>10 Dec</time><h3>Pilot ready</h3><p>Two-zone AWS London, alerting, onboarding checklist and handover.</p></li>
+      <span class="timeline__line"><i id="tlFill"></i></span>
+    </ol>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pilot" id="pilot">
+  <div class="pilot__bg">
+    <video muted loop playsinline preload="none" data-lazy poster="assets/img/poster-26778.jpg">
+      <source data-src="assets/video/26778.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap pilot__inner">
+    <div>
+      <p class="kicker reveal-up">08 &nbsp;&mdash;&nbsp; Join the pilot</p>
+      <h2 class="pilot__title split">Ready when <em>you are.</em></h2>
+      <p class="lead reveal-up">We are onboarding a small group of UK organisations for the first pilot. Tell us a little about your AI usage.</p>
+    </div>
+    <form class="form reveal-up" id="form" novalidate>
+      <div class="field"><input id="fName" required placeholder=" " autocomplete="name"><label for="fName">Your name</label></div>
+      <div class="field"><input id="fCo" required placeholder=" " autocomplete="organization"><label for="fCo">Company</label></div>
+      <div class="field"><input id="fMail" type="email" required placeholder=" " autocomplete="email"><label for="fMail">Work email</label></div>
+      <div class="field field--select">
+        <select id="fSpend" required>
+          <option value="" disabled selected hidden></option>
+          <option>Under &pound;5k a month</option>
+          <option>&pound;5k - &pound;25k a month</option>
+          <option>&pound;25k - &pound;100k a month</option>
+          <option>Over &pound;100k a month</option>
+        </select>
+        <label for="fSpend">Monthly AI spend</label>
+      </div>
+      <button class="btn btn--gold btn--full" type="submit" data-magnetic><span>Request a pilot place</span></button>
+      <p class="form__note">Demo form. Nothing is sent or stored.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot wrap">
+  <div class="foot__big">Aurum<span class="ring"></span></div>
+  <div class="foot__row">
+    <p>AI cost optimisation gateway &middot; demo concept</p>
+    <p>Images: Unsplash &middot; Video: Mixkit</p>
+    <a href="#top" class="totop">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
