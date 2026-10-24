@@ -400,7 +400,7 @@
   /* ---------- masking console demo ---------- */
   const demos = [
     {
-      inp: "Summarise the referral for [Jane Whitmore], NHS [943 476 5919], who lives at [SW1A 1AA]. NI number [QQ 12 34 56 C].",
+      inp: "Summarise the referral for [Jane Whitmore], NHS [943 476 5919], who lives at [SW1A 1AA]. NI number [AB 12 34 56 C].",
       mid: "Summarise the referral for {PERSON_1}, NHS {NHS_1}, who lives at {POSTCODE_1}. NI number {NI_1}.",
       out: "Referral summary for [Jane Whitmore] (NHS [943 476 5919]): routine follow-up advised, letter to [SW1A 1AA]."
     },
